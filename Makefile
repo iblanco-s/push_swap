@@ -6,7 +6,7 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 17:14:03 by iblanco-          #+#    #+#              #
-#    Updated: 2022/12/19 17:14:05 by iblanco-         ###   ########.fr        #
+#    Updated: 2022/12/27 13:23:39 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRCS = main.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
+
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
