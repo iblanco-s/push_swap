@@ -6,7 +6,7 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 17:14:03 by iblanco-          #+#    #+#              #
-#    Updated: 2022/12/27 13:23:39 by iblanco-         ###   ########.fr        #
+#    Updated: 2023/01/02 15:52:23 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRCS = main.c
+SRCS = main.c utils.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/02 16:52:13 by iblanco-         ###   ########.fr       */
+/*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
+/*   Updated: 2023/01/02 15:50:04 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_list
+int	ft_atoi(const char *str)
 {
-	int				data;
-	struct s_list	*next;
-}	t_list;
+	int	i;
+	int	j;
+	int	k;
 
-int	ft_atoi(const char *str);
-void multarg(int argc, char **argv);
-int	main (int argc, char **argv);
-
-#endif
+	i = 0;
+	j = 1;
+	k = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			j *= -1;
+		i++;
+	}
+	while ('0' <= str[i] && str[i] <= '9' && str[i] != '\0')
+	{
+		k = (k * 10) + (str[i] - '0');
+		i++;
+	}
+	return (k * j);
+}
