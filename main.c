@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/02 17:49:12 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/01/03 12:42:29 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,28 @@
 
 #include "push_swap.h"
 #include <stdio.h>
-
+void error(void)
+{
+	write(1, "Error", 5);
+	exit(0);
+}
+void doubles(t_list *head)
+{
+	t_list *temp;
+	
+	//temp = head;
+	while(head -> next != NULL)
+	{
+		temp = head -> next;
+		while (temp != NULL)
+		{
+			if (head->data == temp-> data)
+				error();
+			temp = temp->next;
+		}
+		head = head->next;
+	}
+}
 void addlist(t_list *head, int i)
 {
     t_list *current;
@@ -38,8 +59,8 @@ void multarg(int argc, char **argv)
 
 	i = 2;
 	head = (t_list *)malloc(sizeof(t_list));
-	// if (!head)
-	// 	return ();
+	if (!head)
+		error();
 	head -> data = atoi(argv[i - 1]);
 	head -> next = NULL;
 	while (i < argc)
@@ -54,10 +75,10 @@ void multarg(int argc, char **argv)
 int	main (int argc, char **argv)
 {
 	if (argc < 2)
-		return(0);
+		error();
 	else if (argc == 2)
 		return(0); //1arg();
-	else
+	else 
 		multarg(argc, argv);
 }
 
