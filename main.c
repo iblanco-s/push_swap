@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/03 12:42:29 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:49:46 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@
 
 #include "push_swap.h"
 #include <stdio.h>
-void error(void)
+
+void	error(void)
 {
 	write(1, "Error", 5);
 	exit(0);
 }
-void doubles(t_list *head)
+
+void	doubles(t_list *head)
 {
-	t_list *temp;
-	
-	//temp = head;
-	while(head -> next != NULL)
+	t_list	*temp;
+
+	while (head -> next != NULL)
 	{
 		temp = head -> next;
 		while (temp != NULL)
@@ -40,19 +41,25 @@ void doubles(t_list *head)
 		head = head->next;
 	}
 }
-void addlist(t_list *head, int i)
+
+void	addlist(t_list *head, int i)
 {
-    t_list *current;
-	
+	t_list	*current;
+
 	current = head;
-    while (current->next != NULL) 
-        current = current->next;
-    current->next = (t_list *) malloc(sizeof(t_list));
-    current->next->data = i;
-    current->next->next = NULL;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = (t_list *) malloc(sizeof(t_list));
+	current->next->data = i;
+	current->next->next = NULL;
+}
+void	errcheck(char **argv)
+{
+	int		i;
+	
 }
 
-void multarg(int argc, char **argv)
+void	multarg(int argc, char **argv)
 {
 	t_list	*head;
 	int		i;
@@ -65,20 +72,19 @@ void multarg(int argc, char **argv)
 	head -> next = NULL;
 	while (i < argc)
 		addlist(head, atoi(argv[i++]));
-   	while (head != NULL)
+	while (head != NULL)
 	{
-       printf("%d\n", head->data);
-       head = head->next;
-   	}
+		printf("%d\n", head->data);
+		head = head->next;
+	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		error();
 	else if (argc == 2)
-		return(0); //1arg();
-	else 
+		ft_split(argv[1], " "); //1arg();
+	else
 		multarg(argc, argv);
 }
-

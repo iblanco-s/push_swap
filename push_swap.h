@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/02 16:52:13 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/01/04 14:44:10 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int	ft_atoi(const char *str);
-void multarg(int argc, char **argv);
-int	main (int argc, char **argv);
+int		ft_atoi(const char *str);
+void	multarg(int argc, char **argv);
+int		main(int argc, char **argv);
+int		ft_count(char const *s, char c);
+char	**ft_copy(char **strings, char *temp, char c, char const *s);
+char	**ft_split(char const *s, char c);
 
 #endif
