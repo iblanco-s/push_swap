@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/02 15:50:04 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/01/07 13:24:25 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,40 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (k * j);
+}
+
+int	ft_strlen(const char *a)
+{
+	int	len;
+
+	len = 0;
+	while (a[len] != '\0')
+		len++;
+	return (len);
+}
+
+size_t    ft_strlcpy(char *dest, const char *src, size_t len)
+{
+    size_t    c;
+    size_t    k;
+
+    c = 0;
+    k = 0;
+    while (src[c] != '\0')
+        c++;
+    if (len > 0)
+    {
+        while (src[k] != '\0')
+        {
+            dest[k] = src[k];
+            k++;
+            if (k == len)
+            {
+                k--;
+                break ;
+            }
+        }
+        dest[k] = '\0';
+    }
+    return (c);
 }

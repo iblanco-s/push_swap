@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/04 14:49:46 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/01/07 19:10:31 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,29 @@ void	multarg(int argc, char **argv)
 		head = head->next;
 	}
 }
+int	count_str(char **str)
+{
+	int	i;
 
+	i = 1;
+	while (str[i])
+		i++;
+	if (i < 2)
+		error();
+	return (i);
+}
 int	main(int argc, char **argv)
 {
+	char **str;
+	
 	if (argc < 2)
 		error();
 	else if (argc == 2)
-		ft_split(argv[1], " "); //1arg();
+	{
+		str = ft_mod_split(argv[1], ' ');
+		argc = count_str(str);
+		multarg(argc, str);
+	} 
 	else
 		multarg(argc, argv);
 }
