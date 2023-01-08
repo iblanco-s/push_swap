@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/08 12:44:24 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/08 17:55:00 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	multarg(int argc, char **argv)
 	int		i;
 
 	i = 2;
+	errcheck(argv);
 	head = (t_list *)malloc(sizeof(t_list));
 	if (!head)
 		error();
@@ -94,6 +95,7 @@ void	multarg(int argc, char **argv)
 	head -> next = NULL;
 	while (i < argc)
 		addlist(head, atoi(argv[i++]));
+	doubles(head);
 	while (head != NULL)
 	{
 		printf("%d\n", head->data);
