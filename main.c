@@ -6,14 +6,12 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/07 19:10:31 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/08 12:44:24 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // //A tener en cuenta: 
 //MAX INT Y MIN INT, vienen de una string, larrain hace que cuando necesite lso espacios necesrarios para el numero y si son los mismo que los maxminint los compara uno a uno de izquierda a derecha y si hay alguno mayor error
-//hay dos formas que metan numeros, en un solo argumento o en varios argumentos (1 solo argumento usar split)
-//debería funcionar esto = "++5"
 //makefile esta mal
 
 #include "push_swap.h"
@@ -53,10 +51,34 @@ void	addlist(t_list *head, int i)
 	current->next->data = i;
 	current->next->next = NULL;
 }
+
 void	errcheck(char **argv)
 {
 	int		i;
-	
+	int		j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j] == ' ')
+			j++;
+		if (!argv[i][j])
+			error();
+		if (argv[i][j] == '+' || argv[i][j] == '-')
+		{
+			if (argv[i][j + 1] > 58 || argv[i][j + 1] < 47)
+				error();
+			j++;
+		}
+		while (argv[i][j])
+		{
+			if (argv[i][j] > 58 || argv[i][j] < 47)
+				error();
+			j++;
+		}
+		i++;
+	}
 }
 
 void	multarg(int argc, char **argv)
@@ -78,6 +100,7 @@ void	multarg(int argc, char **argv)
 		head = head->next;
 	}
 }
+
 int	count_str(char **str)
 {
 	int	i;
@@ -89,10 +112,11 @@ int	count_str(char **str)
 		error();
 	return (i);
 }
+
 int	main(int argc, char **argv)
 {
-	char **str;
-	
+	char	**str;
+
 	if (argc < 2)
 		error();
 	else if (argc == 2)
@@ -100,7 +124,7 @@ int	main(int argc, char **argv)
 		str = ft_mod_split(argv[1], ' ');
 		argc = count_str(str);
 		multarg(argc, str);
-	} 
+	}
 	else
 		multarg(argc, argv);
 }

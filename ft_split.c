@@ -6,10 +6,9 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 14:43:23 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/07 19:04:26 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/08 12:39:02 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -37,7 +36,7 @@ int	ft_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_copy(char **strings, char *temp, char c, char const *s)
+char	**ft_copy(char **str, char *temp, char c, char const *s)
 {
 	int	i[5];
 
@@ -51,19 +50,19 @@ char	**ft_copy(char **strings, char *temp, char c, char const *s)
 			i[0]++;
 		while (i[0] < i[4] && c != s[i[0]])
 			temp[i[1]++] = s[i[0]++];
-		if (i[1] > 0 && (i[2] + 1)< (ft_count(s, c) + 1))
+		if (i[1] > 0 && (i[2] + 1) < (ft_count(s, c) + 1))
 		{
 			temp[i[1]] = '\0';
-			strings[i[2] + 1] = malloc(sizeof(char) * (ft_strlen(&temp[i[3]]) + 1));
-			if (!strings[i[2] + 1])
+			str[i[2] + 1] = malloc(ft_strlen(&temp[i[3]]) + 1);
+			if (!str[i[2] + 1])
 				error();
-			ft_strlcpy(strings[i[2] + 1], &temp[i[3]], ft_strlen(&temp[i[3]]) + 1);
+			ft_strlcpy(str[i[2] + 1], &temp[i[3]], ft_strlen(&temp[i[3]]) + 1);
 			i[2]++;
 			i[3] = i[1];
 		}
 	}
-	strings[i[2] + 1] = NULL;
-	return (strings);
+	str[i[2] + 1] = NULL;
+	return (str);
 }
 
 char	**ft_mod_split(char const *s, char c)
