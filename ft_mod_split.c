@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mod_split.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 14:43:23 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/08 17:50:37 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/09 19:11:23 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ char	**ft_mod_split(char const *s, char c)
 		free(temp);
 		error();
 	}
-	strings[0] = malloc(1);
 	strings[0] = NULL;
 	ft_copy(strings, temp, c, s);
 	free(temp);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/08 12:41:25 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/09 18:14:23 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	k;
+	int			i;
+	int			j;
+	long int	ret;
 
 	i = 0;
 	j = 1;
-	k = 0;
+	ret = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
@@ -31,10 +31,13 @@ int	ft_atoi(const char *str)
 	}
 	while ('0' <= str[i] && str[i] <= '9' && str[i] != '\0')
 	{
-		k = (k * 10) + (str[i] - '0');
+		ret = (ret * 10) + (str[i] - '0');
 		i++;
 	}
-	return (k * j);
+	ret *= j;
+	if (ret < -2147483648 || ret > 2147483647)
+		error();
+	return ((int)ret);
 }
 
 int	ft_strlen(const char *a)
