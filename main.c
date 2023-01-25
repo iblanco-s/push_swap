@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/10 19:24:30 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/25 19:22:37 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	multarg(int argc, char **argv)
 	if (!head)
 		error();
 	head -> data = ft_atoi(argv[i - 1]);
+	printf("test");
 	head -> next = NULL;
 	while (i < argc)
 		addlist(head, ft_atoi(argv[i++]));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:17:26 by inigo             #+#    #+#             */
-/*   Updated: 2023/01/10 19:18:02 by inigo            ###   ########.fr       */
+/*   Updated: 2023/01/25 19:58:28 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	error(void)
 {
+	//cuando sale si el numero mayor que long da leaks porque llamo error sin liberar
+	//hacer comando para git add-commit-push
 	write(1, "Error", 5);
 	exit(0);
 }

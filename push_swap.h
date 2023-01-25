@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/09 18:52:24 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:32:11 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ char		**ft_mod_split(char const *s, char c);
 int			ft_strlen(const char *a);
 size_t		ft_strlcpy(char *dest, const char *src, size_t len);
 void		mult_free(char **argv);
+void		doubles(t_list *head);
+void		errcheck(char **argv);
 
 #endif
