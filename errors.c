@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:17:26 by inigo             #+#    #+#             */
-/*   Updated: 2023/01/25 19:58:28 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:39:12 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,42 @@
 
 void	error(void)
 {
-	//cuando sale si el numero mayor que long da leaks porque llamo error sin liberar
-	//hacer comando para git add-commit-push
 	write(1, "Error", 5);
 	exit(0);
 }
 
+//Funcion que comprueba que no hay numeros repetidos
 void	doubles(t_list *head)
 {
 	t_list	*temp;
+	t_list	*aux;
 
+	aux = head;
 	while (head -> next != NULL)
 	{
 		temp = head -> next;
 		while (temp != NULL)
 		{
 			if (head->data == temp-> data)
+			{
+				free_list(aux);
 				error();
+			}
 			temp = temp->next;
 		}
 		head = head->next;
 	}
 }
 
-void	errcheck(char **argv)
+//Funcion que libera el array de strings y llama a error
+void	free_err_check(char **argv)
+{
+	mult_free(argv);
+	error();
+}
+
+//Funcion que comprueba que los argumentos son numeros
+void	err_check(char **argv)
 {
 	int		i;
 	int		j;
@@ -49,32 +61,19 @@ void	errcheck(char **argv)
 		while (argv[i][j] == ' ')
 			j++;
 		if (!argv[i][j])
-			error();
+			free_err_check(argv);
 		if (argv[i][j] == '+' || argv[i][j] == '-')
 		{
 			if (argv[i][j + 1] > 58 || argv[i][j + 1] < 47)
-				error();
+				free_err_check(argv);
 			j++;
 		}
 		while (argv[i][j])
 		{
 			if (argv[i][j] > 58 || argv[i][j] < 47)
-				error();
+				free_err_check(argv);
 			j++;
 		}
 		i++;
-	}
-}
-
-void	mult_free(char **argv)
-{
-	int	i;
-
-	i = 1;
-	if (argv[0] == NULL)
-	{
-		while (argv[i])
-			free(argv[i++]);
-		free(argv);
 	}
 }

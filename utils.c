@@ -6,13 +6,13 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/01/09 18:14:23 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:32:23 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, char **argv, t_list *head)
 {
 	int			i;
 	int			j;
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 	}
 	ret *= j;
 	if (ret < -2147483648 || ret > 2147483647)
-		error();
+		atoi_error(argv, head);
 	return ((int)ret);
 }
 
