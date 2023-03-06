@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/01 17:30:18 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:40:05 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	addlist(t_list *head, int i)
 void	multarg(int argc, char **argv)
 {
 	t_list	*head;
-	t_list	*temp;
 	t_list	*aux;
 	int		i;
 
@@ -49,7 +48,6 @@ void	multarg(int argc, char **argv)
 	while (head != NULL)
 	{
 		printf("%d\n", head->data);
-		temp = head;
 		head = head->next;
 	}
 	free_list(aux);
