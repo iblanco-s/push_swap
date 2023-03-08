@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:20:19 by inigo             #+#    #+#             */
-/*   Updated: 2023/03/04 13:38:44 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/08 18:09:31 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ss(t_list *headA, t_list *headB)
 {
 	swap_a(headA, 1);
 	swap_b(headB, 1);
+	write(1, "ss\n", 3);
 }
 
 	//si uno/ambos no se han podido hacer printeo ss 

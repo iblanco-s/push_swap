@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mov2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:41:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/01 17:45:53 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:10:23 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	rr(t_list **headA, t_list **headB)
 {
 	rotate_a(headA, 1);
 	rotate_b(headB, 1);
+	write(1, "rr\n", 3);
 }
 	//si uno/ambos no se han podido hacer printeo ss
 	//y arriba siempre debo imprimir aunque no se pueda?

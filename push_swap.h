@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/01 17:40:31 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:35:22 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,18 @@ void		err_check(char **argv);
 void		free_err_check(char **argv);
 void		free_list(t_list *head);
 void		atoi_error(char **argv, t_list *head);
+void 		rrr(t_list **headA, t_list **headB);
+void		revrotate_b(t_list **headB, int i);
+void		revrotate_a(t_list **headA, int i);
+void		rr(t_list **headA, t_list **headB);
+void		rotate_b(t_list **headB, int i);
+void		rotate_a(t_list **headA, int i);
+void		ss(t_list *headA, t_list *headB);
+void		swap_b(t_list *headB, int i);
+void		swap_a(t_list *headA, int i);
+void		push_a(t_list **headA, t_list **headB);
+void		push_b(t_list **headA, t_list **headB);
+int			ft_count_list(t_list *head);
+void		ft_algo_3(t_list **headA);
 
 #endif

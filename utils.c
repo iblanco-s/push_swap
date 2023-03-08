@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/01 17:32:23 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:21:46 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,20 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 		dest[k] = '\0';
 	}
 	return (c);
+}
+
+//tamaño lista enlazada
+int	ft_count_list(t_list *head)
+{
+	int		i;
+	t_list	*temp;
+
+	i = 0;
+	temp = head;
+	while (temp != NULL)
+	{
+		i++;
+		temp = temp->next;
+	}
+	return (i);
 }

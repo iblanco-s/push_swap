@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/04 13:40:05 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/08 18:44:35 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ void	multarg(int argc, char **argv)
 	mult_free(argv);
 	doubles(head);
 	aux = head;
+	if (ft_count_list(head) == 3)
+	{
+		ft_algo_3(&head);
+	}
 	while (head != NULL)
 	{
 		printf("%d\n", head->data);
