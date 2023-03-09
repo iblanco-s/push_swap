@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/08 18:44:35 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/09 17:10:53 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ void	addlist(t_list *head, int i)
 	current -> next -> next = NULL;
 }
 
+void	choose(t_list **headA)
+{
+	if (ft_count_list(*headA) == 3)
+		ft_algo_3(headA);
+}
+
 void	multarg(int argc, char **argv)
 {
 	t_list	*head;
@@ -44,11 +50,8 @@ void	multarg(int argc, char **argv)
 		addlist(head, ft_atoi(argv[i++], argv, head));
 	mult_free(argv);
 	doubles(head);
+	choose(&head);
 	aux = head;
-	if (ft_count_list(head) == 3)
-	{
-		ft_algo_3(&head);
-	}
 	while (head != NULL)
 	{
 		printf("%d\n", head->data);

@@ -11,7 +11,7 @@
             "request": "launch",
             "name": "Debug",
             "program": "/Users/iblanco-/Desktop/push_swap/a.out",
-            "args": ["34", "43"],
+            "args": [" 2 3 1 "],
             "cwd": "${workspaceFolder}"
         }
     ]

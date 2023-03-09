@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/08 18:35:22 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/09 16:31:11 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void		push_a(t_list **headA, t_list **headB);
 void		push_b(t_list **headA, t_list **headB);
 int			ft_count_list(t_list *head);
 void		ft_algo_3(t_list **headA);
+void		choose(t_list **headA);
 
 #endif
