@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:20:19 by inigo             #+#    #+#             */
-/*   Updated: 2023/03/08 18:09:31 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/15 17:38:13 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	push_a(t_list **headA, t_list **headB)
 		write(1, "pa\n", 3);
 	}
 }
+
+
 
 void	push_b(t_list **headA, t_list **headB)
 {
