@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/03/09 17:21:46 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:17:49 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	ft_algo_3(t_list **headA)
 		if (temp -> data > temp -> next -> data)
 			swap_a(temp, 0);
 		if (temp -> next -> data > temp -> next -> next-> data)
-			revrotate_a(&temp, 0);
-		if (temp -> data > temp -> next -> next -> data)
+			revrotate_a(headA, 0);
+		temp = *headA;
+		if (temp -> data > temp -> next -> data)
 			swap_a(temp, 0);
 	}
 }
