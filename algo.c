@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/03/17 17:17:49 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:32:19 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,36 @@ void	ft_algo_3(t_list **headA)
 			swap_a(temp, 0);
 	}
 }
+
+//algoritmo para ordenar 5 elementos con dos stacks
+//POSIBLEMENTE INNECESARIO PARA MI APROACH
+void	ft_algo_5(t_list **headA)
+{
+	t_list *temp;
+	t_list	*headB;
+	int i;
+	
+	i = 0;
+	headB = NULL;
+	temp = *headA;
+	while (i < 2)
+	{
+		if (temp -> data < temp -> next -> data)
+		{
+			//esta mal, deberia enviarse solo los 2 mas pequeños
+			push_b(headA, &headB);
+			i++;
+		}
+		else
+			rotate_a(headA, 0);
+		temp = *headA;
+	}
+	ft_algo_3(headA);
+	while (i > 0)
+	{
+		push_a(headA, &headB);
+		i--;
+	}
+}
+
+//algoritmo para ordenar mas de 5 elementos con dos stacks
