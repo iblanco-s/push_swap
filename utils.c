@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/08 18:21:46 by inigo            ###   ########.fr       */
+/*   Updated: 2023/03/25 19:03:07 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,21 @@ int	ft_count_list(t_list *head)
 		temp = temp->next;
 	}
 	return (i);
+}
+
+int *ft_listToArray(int size, t_list *head)
+{
+	int	*nums;
+	int	i;
+	t_list *temp;
+
+	temp = head;
+	nums = malloc(sizeof(int) * size);
+	while (i < size -1)
+	{
+		nums[i] = temp->data;
+		temp = temp->next;
+		i++;
+	}
+	return (nums);
 }

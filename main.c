@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/22 17:43:34 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/25 18:54:53 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	choose(t_list **headA)
 		ft_algo_3(headA);
 	else if (i == 5)
 		ft_algo_5(headA);
-	//else 
-		//ft_algo_big(headA);
+	else 
+		ft_algo_big(headA, i);
 }
 
 void	multarg(int argc, char **argv)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/03/22 18:32:19 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:43:05 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,9 @@ void	ft_algo_5(t_list **headA)
 }
 
 //algoritmo para ordenar mas de 5 elementos con dos stacks
+void	ft_algo_big(t_list **headA, int size)
+{
+	int middle;
+	
+	middle = ft_middleNum(ft_listToArray(size, *headA), size);
+}
