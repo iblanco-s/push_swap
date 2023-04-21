@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/25 18:54:53 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/21 17:43:50 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	multarg(int argc, char **argv)
 	aux = head;
 	while (head != NULL)
 	{
-		printf("%d\n", head->data);
+		printf("\n%d", head->data);
 		head = head->next;
 	}
 	free_list(aux);

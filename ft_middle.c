@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_middle.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/19 19:29:37 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/21 16:59:44 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,14 @@ void	quicksort(int *nums, int low, int high)
 	}
 }
 
-int	ft_middle(int *nums, int size)
+int	ft_middleNum(int *nums, int size)
 {
+	int i;
 	int	middle;
 
+	i = 0;
 	quicksort(nums, 0, size - 1);
-	middle = nums[size / 2];
+	middle = nums[(size / 2)];
+	free (nums);
 	return (middle);
 }

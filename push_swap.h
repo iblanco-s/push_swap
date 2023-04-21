@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/22 17:43:19 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:08:10 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ int			ft_count_list(t_list *head);
 void		ft_algo_3(t_list **headA);
 void		choose(t_list **headA);
 void		ft_algo_5(t_list **headA);
+void 		ft_algo_big(t_list **headA, int size);
+int			ft_middleNum(int *nums, int size);
+int			*ft_listToArray(int size, t_list *head);
 
 #endif
