@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/21 17:43:50 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:37:47 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ void	multarg(int argc, char **argv)
 		addlist(head, ft_atoi(argv[i++], argv, head));
 	mult_free(argv);
 	doubles(head);
-	choose(&head);
+	printf("\n\n\nOrdenado = %d",ft_isItSorted(head));
+	//choose(&head);
 	aux = head;
 	while (head != NULL)
 	{
