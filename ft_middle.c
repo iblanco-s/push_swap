@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/19 19:29:37 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/26 20:04:44 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,29 @@ void	quicksort(int *nums, int low, int high)
 	}
 }
 
-int	ft_middle(int *nums, int size)
-{
-	int	middle;
+// int	ft_middle(int *nums, int size)
+// {
+// 	int	middle;
 
-	quicksort(nums, 0, size - 1);
-	middle = nums[size / 2];
-	return (middle);
+// 	quicksort(nums, 0, size - 1);
+// 	middle = nums[size / 2];
+// 	return (middle);
+// }
+void	ft_orderSortedPosition(int *nums, int size, t_list **headA) 
+{
+	int i;
+	t_list *temp;
+
+	i = 0;
+
+	temp = *headA;
+	while (i < size) 
+	{
+		while (nums[i] != temp -> data)
+			temp = temp -> next;
+		if (nums[i] == temp -> data)
+			temp -> data = i;
+		i++;
+		temp = *headA;
+	}
 }

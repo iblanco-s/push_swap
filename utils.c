@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:40:02 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/25 19:03:07 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/26 20:05:06 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,10 @@ int *ft_listToArray(int size, t_list *head)
 	int	i;
 	t_list *temp;
 
+	i = 0;
 	temp = head;
 	nums = malloc(sizeof(int) * size);
-	while (i < size -1)
+	while (i < size)
 	{
 		nums[i] = temp->data;
 		temp = temp->next;
