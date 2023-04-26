@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/03/25 18:54:53 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/24 16:37:47 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,12 @@ void	multarg(int argc, char **argv)
 		addlist(head, ft_atoi(argv[i++], argv, head));
 	mult_free(argv);
 	doubles(head);
-	choose(&head);
+	printf("\n\n\nOrdenado = %d",ft_isItSorted(head));
+	//choose(&head);
 	aux = head;
 	while (head != NULL)
 	{
-		printf("%d\n", head->data);
+		printf("\n%d", head->data);
 		head = head->next;
 	}
 	free_list(aux);
