@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/26 20:43:10 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/27 18:12:17 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,13 @@ void	ft_algo_5(t_list **headA)
 //algoritmo para ordenar mas de 5 elementos con dos stacks
 void	ft_algo_big(t_list **headA, int size)
 {
-	int *nums;
-	//ft_middleNum(ft_listToArray(size, *headA), size);
+	int	*nums;
+	t_list *headB;
+	
 	nums = ft_listToArray(size, *headA);
-	quickSort(nums, 0, size - 1);
 	ft_orderSortedPosition(nums, size, headA);
+	headB = (t_list *)malloc(sizeof(t_list));
+	// push_a(headA, &headB);
+	// push_b(headA, &headB);
+	ft_binaryRadix(*headA, headB, size);
 }

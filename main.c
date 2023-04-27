@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/24 16:37:47 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:50:37 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	addlist(t_list *head, int i)
 	current -> next -> next = NULL;
 }
 
-void	choose(t_list **headA)
+void	ft_choose(t_list **headA)
 {
 	int	i;
 
@@ -56,8 +56,7 @@ void	multarg(int argc, char **argv)
 		addlist(head, ft_atoi(argv[i++], argv, head));
 	mult_free(argv);
 	doubles(head);
-	printf("\n\n\nOrdenado = %d",ft_isItSorted(head));
-	//choose(&head);
+	ft_choose(&head);
 	aux = head;
 	while (head != NULL)
 	{
