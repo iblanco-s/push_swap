@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_middle.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/27 19:22:00 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/28 18:38:14 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,21 +83,27 @@ void	ft_binaryRadix(t_list *headA, t_list *headB, int size)
 {
 	int i;
 	int j;
+	int countPb;
 
 	i = 0;
 	j = 0;
+	countPb = 0;
 	while(ft_isItSorted(headA) == 1 && i < 32)
 	{
 		while (j < size)
 		{
 			if ((headA->data >> i) & 1)
 				rotate_a(&headA, 0);
-			else
+			else 
+			{
 				push_b(&headA, &headB);
+				countPb++;
+			}	
 			j++;
 		}
-		while (headB -> next != NULL)
+		while (countPb--)
 			push_a(&headA, &headB);
+		countPb = 0;
 		j = 0;
 		i++;
 	}

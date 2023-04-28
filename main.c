@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/27 17:50:37 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/28 18:18:57 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	multarg(int argc, char **argv)
 	doubles(head);
 	ft_choose(&head);
 	aux = head;
-	while (head != NULL)
-	{
-		printf("\n%d", head->data);
-		head = head->next;
-	}
+	// while (head != NULL)
+	// {
+	// 	printf("\n%d", head->data);
+	// 	head = head->next;
+	// }
 	free_list(aux);
 }
 
