@@ -6,16 +6,16 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:26:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/27 18:15:17 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/29 14:10:36 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_isItSorted(t_list *headA)
+int	ft_is_it_sorted(t_list *headA)
 {
-	int sorted;
-	
+	int	sorted;
+
 	sorted = 0;
 	while (headA -> next && sorted == 0)
 	{

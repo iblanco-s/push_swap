@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/28 18:18:57 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/29 17:30:21 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_choose(t_list **headA)
 	i = ft_count_list(*headA);
 	if (i == 3)
 		ft_algo_3(headA);
-	else if (i == 5)
-		ft_algo_5(headA);
-	else 
+	//else if (i == 5)
+		//ft_algo_5(headA);
+	else
 		ft_algo_big(headA, i);
 }
 
@@ -58,14 +58,14 @@ void	multarg(int argc, char **argv)
 	doubles(head);
 	ft_choose(&head);
 	aux = head;
+	free_list(aux);
+}
+
 	// while (head != NULL)
 	// {
 	// 	printf("\n%d", head->data);
 	// 	head = head->next;
 	// }
-	free_list(aux);
-}
-
 int	count_str(char **str)
 {
 	int	i;

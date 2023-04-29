@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_middle.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/28 18:38:14 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/04/29 14:07:55 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,15 @@ void	quicksort(int *nums, int low, int high)
 // 	middle = nums[size / 2];
 // 	return (middle);
 // }
-void	ft_orderSortedPosition(int *nums, int size, t_list **headA) 
+void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 {
-	int i;
-	t_list *temp;
+	int		i;
+	t_list	*temp;
 
 	i = 0;
-	
 	quicksort(nums, 0, size - 1);
 	temp = *headA;
-	while (i < size) 
+	while (i < size)
 	{
 		while (nums[i] != temp -> data)
 			temp = temp -> next;
@@ -79,31 +78,30 @@ void	ft_orderSortedPosition(int *nums, int size, t_list **headA)
 	}
 }
 
-void	ft_binaryRadix(t_list *headA, t_list *headB, int size)
+void	ft_binary_radix(t_list *headA, t_list *headB, int size)
 {
-	int i;
-	int j;
-	int countPb;
+	int	i;
+	int	j;
+	int	countpb;
 
 	i = 0;
 	j = 0;
-	countPb = 0;
-	while(ft_isItSorted(headA) == 1 && i < 32)
+	countpb = 0;
+	while (ft_is_it_sorted(headA) == 1 && i < 32)
 	{
-		while (j < size)
+		while (j++ < size)
 		{
 			if ((headA->data >> i) & 1)
 				rotate_a(&headA, 0);
-			else 
+			else
 			{
 				push_b(&headA, &headB);
-				countPb++;
+				countpb++;
 			}	
-			j++;
 		}
-		while (countPb--)
+		while (countpb--)
 			push_a(&headA, &headB);
-		countPb = 0;
+		countpb = 0;
 		j = 0;
 		i++;
 	}

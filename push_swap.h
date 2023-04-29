@@ -6,7 +6,7 @@
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/27 18:13:57 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/29 14:08:28 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		err_check(char **argv);
 void		free_err_check(char **argv);
 void		free_list(t_list *head);
 void		atoi_error(char **argv, t_list *head);
-void 		rrr(t_list **headA, t_list **headB);
+void		rrr(t_list **headA, t_list **headB);
 void		revrotate_b(t_list **headB, int i);
 void		revrotate_a(t_list **headA, int i);
 void		rr(t_list **headA, t_list **headB);
@@ -53,10 +53,9 @@ int			ft_count_list(t_list *head);
 void		ft_algo_3(t_list **headA);
 void		choose(t_list **headA);
 void		ft_algo_5(t_list **headA);
-void 		ft_algo_big(t_list **headA, int size);
-int			ft_middleNum(int *nums, int size);
-int			*ft_listToArray(int size, t_list *head);
-int			ft_isItSorted(t_list *headA);
-void		ft_orderSortedPosition(int *nums, int size, t_list **headA);
-void		ft_binaryRadix(t_list *headA, t_list *headB, int size);
+void		ft_algo_big(t_list **headA, int size);
+int			*ft_list_to_array(int size, t_list *head);
+int			ft_is_it_sorted(t_list *headA);
+void		ft_order_sorted_position(int *nums, int size, t_list **headA);
+void		ft_binary_radix(t_list *headA, t_list *headB, int size);
 #endif
