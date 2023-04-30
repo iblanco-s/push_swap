@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/29 14:13:28 by inigo            ###   ########.fr       */
+/*   Updated: 2023/04/30 19:38:38 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,33 +31,31 @@ void	ft_algo_3(t_list **headA)
 }
 
 //algoritmo para ordenar 5 elementos con dos stacks
-//POSIBLEMENTE INNECESARIO PARA MI APROACH
-void	ft_algo_5(t_list **headA)
+void	ft_algo_5(t_list **headA, int size)
 {
-	t_list	*temp;
+	int		*nums;
 	t_list	*headb;
-	int		i;
 
-	i = 0;
-	headb = NULL;
-	temp = *headA;
-	while (i < 2)
+	nums = ft_list_to_array(size, *headA);
+	ft_order_sorted_position(nums, size, headA);
+	free(nums);
+	headb = (t_list *)malloc(sizeof(t_list));
+	while (size > 3)
 	{
-		if (temp -> data < temp -> next -> data)
+		if ((*headA)->data == 0 || (*headA)->data == 1)
 		{
 			push_b(headA, &headb);
-			i++;
+			size--;
 		}
 		else
 			rotate_a(headA, 0);
-		temp = *headA;
 	}
 	ft_algo_3(headA);
-	while (i > 0)
-	{
-		push_a(headA, &headb);
-		i--;
-	}
+	push_a(headA, &headb);
+	push_a(headA, &headb);
+	if ((*headA)->data == 1)
+		swap_a(*headA, 0);
+	free(headb);
 }
 
 //algoritmo para ordenar mas de 5 elementos con dos stacks
@@ -68,6 +66,8 @@ void	ft_algo_big(t_list **headA, int size)
 
 	nums = ft_list_to_array(size, *headA);
 	ft_order_sorted_position(nums, size, headA);
+	free(nums);
 	headb = (t_list *)malloc(sizeof(t_list));
 	ft_binary_radix(*headA, headb, size);
+	free(headb);
 }
