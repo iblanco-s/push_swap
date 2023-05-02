@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_middle.c                                        :+:      :+:    :+:   */
+/*   ft_algo_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/30 18:12:16 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:53:03 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,6 @@ void	quicksort(int *nums, int low, int high)
 	}
 }
 
-// int	ft_middle(int *nums, int size)
-// {
-// 	int	middle;
-
-// 	quicksort(nums, 0, size - 1);
-// 	middle = nums[size / 2];
-// 	return (middle);
-// }
 void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 {
 	int		i;
@@ -78,7 +70,7 @@ void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 	}
 }
 
-void	ft_binary_radix(t_list *headA, t_list *headB, int size)
+t_list	*ft_binary_radix(t_list *headA, t_list *headB, int size)
 {
 	int	i;
 	int	j;
@@ -87,7 +79,7 @@ void	ft_binary_radix(t_list *headA, t_list *headB, int size)
 	i = 0;
 	j = 0;
 	countpb = 0;
-	while (ft_is_it_sorted(headA) == 1 && i < 32)
+	while (ft_is_it_sorted(headA) == 1 && i++ < 32)
 	{
 		while (j++ < size)
 		{
@@ -103,6 +95,6 @@ void	ft_binary_radix(t_list *headA, t_list *headB, int size)
 			push_a(&headA, &headB);
 		countpb = 0;
 		j = 0;
-		i++;
 	}
+	return (headA);
 }

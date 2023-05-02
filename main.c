@@ -6,12 +6,10 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/30 18:34:07 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:50:59 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// //A tener en cuenta: 
-//makefile esta regular
 #include "push_swap.h"
 
 void	addlist(t_list *head, int i)
