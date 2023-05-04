@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moreUtils.c                                        :+:      :+:    :+:   */
+/*   more_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:26:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/04/29 14:10:36 by inigo            ###   ########.fr       */
+/*   Updated: 2023/05/03 19:57:10 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,16 @@ int	ft_is_it_sorted(t_list *headA)
 		headA = headA -> next;
 	}
 	return (sorted);
+}
+
+void ft_print_list(t_list *headA)
+{
+	t_list *temp;
+
+	temp = headA;
+	while (temp)
+	{
+		printf("%d\n", temp -> data);
+		temp = temp -> next;
+	}
 }

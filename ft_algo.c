@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/02 18:51:47 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:00:51 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,20 +68,9 @@ void	ft_algo_big(t_list **headA, int size)
 	ft_order_sorted_position(nums, size, headA);
 	free(nums);
 	headb = (t_list *)malloc(sizeof(t_list));
-	*headA = ft_binary_radix(*headA, headb, size);
-	t_list *temp;
-	temp = *headA;
-	while (temp != NULL)
-	{
-		printf("\n%d\n", temp -> data);
-		temp = temp -> next;
-	}
-	// temp = headb;
-	// while (temp != NULL)
-	// {
-
-	// 	printf("\n%d\n", temp -> data);
-	// 	temp = temp -> next;
-	// }
+	ft_binary_radix(*headA, headb, size);
+	//ft_print_list(headb);
+	//printf("\nheadb\n");
+	//ft_print_list(*headA);
 	free(headb);
 }
