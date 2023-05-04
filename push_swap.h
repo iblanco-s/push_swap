@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/04 12:04:16 by inigo            ###   ########.fr       */
+/*   Updated: 2023/05/04 17:20:45 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		ft_algo_big(t_list **headA, int size);
 int			*ft_list_to_array(int size, t_list *head);
 int			ft_is_it_sorted(t_list *headA);
 void		ft_order_sorted_position(int *nums, int size, t_list **headA);
-void		ft_binary_radix(t_list *headA, t_list *headB, int size);
+void		ft_binary_radix(t_list **headA, t_list *headB, int size);
 void		ft_algo_5(t_list **headA, int size);
 void		ft_print_list(t_list *headA);
 #endif

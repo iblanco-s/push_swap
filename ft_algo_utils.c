@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/04 12:04:10 by inigo            ###   ########.fr       */
+/*   Updated: 2023/05/04 17:21:40 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 	}
 }
 
-void	ft_binary_radix(t_list *headA, t_list *headB, int size)
+void	ft_binary_radix(t_list **headA, t_list *headB, int size)
 {
 	int	i;
 	int	j;
@@ -79,21 +79,21 @@ void	ft_binary_radix(t_list *headA, t_list *headB, int size)
 	i = 0;
 	j = 0;
 	countPb = 0;
-	while(ft_is_it_sorted(headA) == 1 && i < 32)
+	while(ft_is_it_sorted(*headA) == 1 && i < 32)
 	{
 		while (j < size)
 		{
-			if ((headA->data >> i) & 1)
-				rotate_a(&headA, 0);
+			if (((*headA)->data >> i) & 1)
+				rotate_a(headA, 0);
 			else 
 			{
-				push_b(&headA, &headB);
+				push_b(headA, &headB);
 				countPb++;
 			}	
 			j++;
 		}
 		while (countPb--)
-			push_a(&headA, &headB);
+			push_a(headA, &headB);
 		countPb = 0;
 		j = 0;
 		i++;

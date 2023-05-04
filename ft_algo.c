@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/04 15:58:31 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:20:26 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	ft_algo_big(t_list **headA, int size)
 	nums = ft_list_to_array(size, *headA);
 	ft_order_sorted_position(nums, size, headA);
 	free(nums);
-	headb = (t_list *)malloc(sizeof(t_list));
-	ft_binary_radix(*headA, headb, size);
-	free(headb);
+	headb = NULL;
+	ft_binary_radix(headA, headb, size);
 }

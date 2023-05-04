@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:20:19 by inigo             #+#    #+#             */
-/*   Updated: 2023/04/28 18:22:16 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:18:45 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	push_b(t_list **headA, t_list **headB)
 {
 	t_list	*temp;
 
-	if (*headA && *headB)
+	if (*headA)
 	{
 		temp = *headA;
 		*headA = temp -> next;
