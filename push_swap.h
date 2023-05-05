@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/04 17:20:45 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:15:41 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/04 17:21:40 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:18:58 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,28 +74,27 @@ void	ft_binary_radix(t_list **headA, t_list *headB, int size)
 {
 	int	i;
 	int	j;
-	int	countPb;
+	int	count_pb;
 
-	i = 0;
+	i = -1;
 	j = 0;
-	countPb = 0;
-	while(ft_is_it_sorted(*headA) == 1 && i < 32)
+	count_pb = 0;
+	while (ft_is_it_sorted(*headA) == 1 && i++ < 32)
 	{
 		while (j < size)
 		{
 			if (((*headA)->data >> i) & 1)
 				rotate_a(headA, 0);
-			else 
+			else
 			{
 				push_b(headA, &headB);
-				countPb++;
+				count_pb++;
 			}	
 			j++;
 		}
-		while (countPb--)
+		while (count_pb--)
 			push_a(headA, &headB);
-		countPb = 0;
+		count_pb = 0;
 		j = 0;
-		i++;
 	}
 }

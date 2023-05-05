@@ -6,13 +6,13 @@
 #    By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/19 17:14:03 by iblanco-          #+#    #+#              #
-#    Updated: 2023/05/04 17:17:17 by iblanco-         ###   ########.fr        #
+#    Updated: 2023/05/05 15:49:49 by iblanco-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CC = gcc -Wall -Werror -Wextra -fsanitize=address -g3
+CC = gcc -Wall -Werror -Wextra
 
 RM = rm -f
 

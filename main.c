@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/02 18:50:59 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:09:15 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,11 @@ int	main(int argc, char **argv)
 	char	**str;
 
 	if (argc < 2)
-		error();
+		return (0);
 	else if (argc == 2)
 	{
+		if (ft_strlen(argv[1]) == 0)
+			return (0);
 		str = ft_mod_split(argv[1], ' ');
 		argc = count_str(str);
 		multarg(argc, str);

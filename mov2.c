@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mov2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:41:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/04 11:46:07 by inigo            ###   ########.fr       */
+/*   Updated: 2023/05/05 16:15:15 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@ void	rotate_a(t_list **headA, int i)
 	{
 		while (temp -> next)
 			temp = temp -> next;
-		// temp -> next = *headA;
-		// temp = *headA;
-		// *headA = temp -> next;
-		// temp -> next = NULL;
-		temp->next = *headA;
-    	*headA = (*headA)->next;
-   		temp->next->next = NULL;
+		temp -> next = *headA;
+		temp = *headA;
+		*headA = temp -> next;
+		temp -> next = NULL;
 		if (i == 0)
 			write(1, "ra\n", 3);
 	}
