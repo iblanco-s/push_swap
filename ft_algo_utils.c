@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/05 16:18:58 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:58:51 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 	while (i < size)
 	{
 		while (nums[i] != temp -> data)
-			temp = temp -> next;
-		if (nums[i] == temp -> data)
-			temp -> data = i;
+			temp = temp->next;
+		if (nums[i] == temp->data)
+			temp->data = i;
 		i++;
 		temp = *headA;
 	}

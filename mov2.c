@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:41:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 16:15:15 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 17:01:44 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	rotate_a(t_list **headA, int i)
 	temp = *headA;
 	if (*headA)
 	{
-		while (temp -> next)
-			temp = temp -> next;
-		temp -> next = *headA;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = *headA;
 		temp = *headA;
-		*headA = temp -> next;
-		temp -> next = NULL;
+		*headA = temp->next;
+		temp->next = NULL;
 		if (i == 0)
 			write(1, "ra\n", 3);
 	}
@@ -37,12 +37,12 @@ void	rotate_b(t_list **headB, int i)
 	temp = *headB;
 	if (*headB)
 	{
-		while (temp -> next)
-			temp = temp -> next;
-		temp -> next = *headB;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = *headB;
 		temp = *headB;
-		*headB = temp -> next;
-		temp -> next = NULL;
+		*headB = temp->next;
+		temp->next = NULL;
 		if (i == 0)
 			write(1, "rb\n", 3);
 	}
@@ -64,11 +64,11 @@ void	revrotate_a(t_list **headA, int i)
 	temp = *headA;
 	if (*headA)
 	{
-		while (temp -> next -> next)
-			temp = temp -> next;
-		temp -> next -> next = *headA;
-		*headA = temp -> next;
-		temp -> next = NULL;
+		while (temp->next->next)
+			temp = temp->next;
+		temp->next->next = *headA;
+		*headA = temp->next;
+		temp->next = NULL;
 		if (i == 0)
 			write(1, "rra\n", 4);
 	}
@@ -81,11 +81,11 @@ void	revrotate_b(t_list **headB, int i)
 	temp = *headB;
 	if (*headB)
 	{
-		while (temp -> next -> next)
-			temp = temp -> next;
-		temp -> next -> next = *headB;
-		*headB = temp -> next;
-		temp -> next = NULL;
+		while (temp->next->next)
+			temp = temp->next;
+		temp->next->next = *headB;
+		*headB = temp->next;
+		temp->next = NULL;
 		if (i == 0)
 			write(1, "rrb\n", 4);
 	}

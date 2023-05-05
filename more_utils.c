@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:26:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 16:15:34 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:19:15 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,23 @@ int	ft_is_it_sorted(t_list *headA)
 	int	sorted;
 
 	sorted = 0;
-	while (headA -> next && sorted == 0)
-	{
-		if (headA -> data > headA -> next -> data)
+	while (headA->next && sorted == 0)
+	{	
+		if (headA->data > headA->next->data)
 			sorted = 1;
-		headA = headA -> next;
+		headA = headA->next;
 	}
 	return (sorted);
+}
+
+void ft_print_list(t_list *headA)
+{
+	t_list *temp;
+
+	temp = headA;
+	while (temp)
+	{
+		printf("%d\n", temp -> data);
+		temp = temp -> next;
+	}
 }

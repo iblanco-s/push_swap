@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 16:09:15 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:57:56 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	addlist(t_list *head, int i)
 	current = head;
 	while (current -> next != NULL)
 		current = current->next;
-	current -> next = (t_list *) malloc(sizeof(t_list));
-	current -> next -> data = i;
-	current -> next -> next = NULL;
+	current->next = (t_list *) malloc(sizeof(t_list));
+	current->next->data = i;
+	current->next->next = NULL;
 }
 
 void	ft_choose(t_list **headA)
@@ -31,8 +31,11 @@ void	ft_choose(t_list **headA)
 	i = ft_count_list(*headA);
 	if (i == 3)
 		ft_algo_3(headA);
-	else if (i == 5)
-		ft_algo_5(headA, i);
+	else if (i == 2)
+	{
+		if ((*headA)->data > (*headA)->next->data)
+			swap_a(*headA, 0);
+	}
 	else
 		ft_algo_big(headA, i);
 }
@@ -47,8 +50,8 @@ void	multarg(int argc, char **argv)
 	head = (t_list *)malloc(sizeof(t_list));
 	if (!head)
 		free_err_check(argv);
-	head -> data = ft_atoi(argv[i - 1], argv, head);
-	head -> next = NULL;
+	head->data = ft_atoi(argv[i - 1], argv, head);
+	head->next = NULL;
 	while (i < argc)
 		addlist(head, ft_atoi(argv[i++], argv, head));
 	mult_free(argv);
