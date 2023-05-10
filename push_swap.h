@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:14:32 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 18:19:25 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/10 19:19:39 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
@@ -59,5 +58,4 @@ void		ft_order_sorted_position(int *nums, int size, t_list **headA);
 void		ft_binary_radix(t_list **headA, t_list *headB, int size);
 void		ft_algo_5(t_list **headA, int size);
 void		ft_print_list(t_list *headA);
-void ft_print_list(t_list *headA);
 #endif

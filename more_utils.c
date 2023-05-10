@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   more_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:26:41 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 18:19:15 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/10 19:20:34 by inigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,4 @@ int	ft_is_it_sorted(t_list *headA)
 		headA = headA->next;
 	}
 	return (sorted);
-}
-
-void ft_print_list(t_list *headA)
-{
-	t_list *temp;
-
-	temp = headA;
-	while (temp)
-	{
-		printf("%d\n", temp -> data);
-		temp = temp -> next;
-	}
 }
