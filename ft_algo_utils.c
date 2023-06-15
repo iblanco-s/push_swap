@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:04:40 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/05 16:58:51 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:03:53 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,27 @@ void	ft_order_sorted_position(int *nums, int size, t_list **headA)
 	int		i;
 	t_list	*temp;
 
-	i = 0;
+	i = -1;
 	quicksort(nums, 0, size - 1);
 	temp = *headA;
-	while (i < size)
+	while (temp)
 	{
-		while (nums[i] != temp -> data)
-			temp = temp->next;
-		if (nums[i] == temp->data)
-			temp->data = i;
-		i++;
-		temp = *headA;
+		temp->index = temp->data;
+		temp = temp->next;
+	}
+	temp = *headA;
+	while (temp)
+	{
+		while (i++ < size)
+		{
+			if (temp->index == nums[i])
+			{
+				temp->data = i;
+				i = -1;
+				break ;
+			}
+		}
+		temp = temp->next;
 	}
 }
 

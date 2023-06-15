@@ -6,7 +6,7 @@
 /*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:54:40 by iblanco-          #+#    #+#             */
-/*   Updated: 2023/05/05 16:57:56 by iblanco-         ###   ########.fr       */
+/*   Updated: 2023/05/19 16:59:34 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,18 @@ void	ft_choose(t_list **headA)
 	int	i;
 
 	i = ft_count_list(*headA);
-	if (i == 3)
-		ft_algo_3(headA);
-	else if (i == 2)
+	if (ft_is_it_sorted(*headA) == 1)
 	{
-		if ((*headA)->data > (*headA)->next->data)
-			swap_a(*headA, 0);
+		if (i == 3)
+			ft_algo_3(headA);
+		else if (i == 2)
+		{
+			if ((*headA)->data > (*headA)->next->data)
+				swap_a(*headA, 0);
+		}
+		else
+			ft_algo_big(headA, i);
 	}
-	else
-		ft_algo_big(headA, i);
 }
 
 void	multarg(int argc, char **argv)
@@ -47,6 +50,8 @@ void	multarg(int argc, char **argv)
 
 	i = 2;
 	err_check(argv);
+	if (argc == 2)
+		ft_bug_atoi(argv[1], argv);
 	head = (t_list *)malloc(sizeof(t_list));
 	if (!head)
 		free_err_check(argv);

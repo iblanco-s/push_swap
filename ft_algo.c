@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inigo <inigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: iblanco- <iblanco-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 18:18:37 by inigo             #+#    #+#             */
-/*   Updated: 2023/05/10 19:22:08 by inigo            ###   ########.fr       */
+/*   Updated: 2023/05/11 16:02:44 by iblanco-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	ft_optimizator(t_list **headA, t_list *headb, int size)
 			swap_a(*headA, 0);
 	}
 }
-//SA 4 -5 3 -1 2 "probar valgrind, git push y hacer el examen"
 
 void	ft_algo_big(t_list **headA, int size)
 {
